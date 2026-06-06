@@ -1,7 +1,7 @@
 # Evidence Index
 
 ## Overview
-This repository documents a critical security vulnerability reported to Google's Vulnerability Reward Program (VRP) on March 26, 2026, dismissed as "Intended Behavior" on May 8, 2026, and later verified as P1 by internal Google systems.
+This repository documents a critical security vulnerability reported to Google's Vulnerability Reward Program (VRP) on March 26, 2026, dismissed as "Intended Behavior" on May 8, 2026, and later verified as P1 status through internal Google systems.
 
 ---
 
@@ -14,12 +14,27 @@ This repository documents a critical security vulnerability reported to Google's
 
 ---
 
-### Evidence 2: May 8, 2026 - VRP Case Closure
-**Email from Google Bug Hunter Team** dismissing the vulnerability as "not a technical security vulnerability" and blocking further communication.
+### Evidence 2: Backend System Flags - Sandbox Escape Confirmation
+**Image:** 20260403_222227~2.jpg
 
-**Status Change:** Assigned → Intended Behavior
+JSON output displaying backend flags confirming sandbox escape:
 
-**Key Quote:** "from now on, we won't be able to see any of your responses."
+```
+"is_outside_sandbox": True,
+"sequence_match": True,
+"timestamp_sync": "16:16_Verified",
+"wave_form_start_byte": 15,
+"token_strength": "High (Differential)",
+"payload_status": "Complete (152 Bytes)"
+```
+
+**Backend Flags Description:**
+- **is_outside_sandbox**: True - indicating the process is executing outside the sandbox environment
+- **sequence_match**: True - confirming sequence validation passed
+- **timestamp_sync**: "16:16_Verified" - showing verified timestamp synchronization
+- **wave_form_start_byte**: 15 - technical parameter value
+- **token_strength**: "High (Differential)" - indicating strong token authentication
+- **payload_status**: "Complete (152 Bytes)" - showing complete payload transmission
 
 ---
 
@@ -53,7 +68,16 @@ This repository documents a critical security vulnerability reported to Google's
 
 ---
 
-### Evidence 6: May 14, 2026 - Appeal/Re-Triage Request
+### Evidence 6: May 8, 2026 - VRP Case Closure
+**Email from Google Bug Hunter Team** dismissing the vulnerability as "not a technical security vulnerability" and blocking further communication.
+
+**Status Change:** Assigned → Intended Behavior
+
+**Key Quote:** "from now on, we won't be able to see any of your responses."
+
+---
+
+### Evidence 7: May 14, 2026 - Appeal/Re-Triage Request
 **IssueTracker:** "Appeal: Immediate Re-Triage - STT Zero-Click Bypass - VRP P1 Verified"
 
 **Key Claims:**
@@ -64,14 +88,14 @@ This repository documents a critical security vulnerability reported to Google's
 
 ---
 
-### Evidence 7: Automated Rejection Response
+### Evidence 8: Automated Rejection Response
 **Google's Report Analysis:** Marks submission as "Vague Description," "Missing Reproduction Steps," and "Invalid Report"
 
 **Note:** Google system explicitly states this is automated feedback, "NOT part of the report submitted by the user"
 
 ---
 
-### Evidence 8: May 15, 2026 - Follow-up Response
+### Evidence 9: May 15, 2026 - Follow-up Response
 **IssueTracker Comment #4 from Dustin McKay** responding to duplicate classification.
 
 **Key Arguments:**
@@ -96,7 +120,7 @@ This repository documents a critical security vulnerability reported to Google's
 
 ## Critical Discrepancy
 
-**The Core Issue:** A vulnerability cannot simultaneously be classified as both "Intended Behavior" (dismissed) and "P1 Verified" (highest priority confirmed bug). Yet the evidence shows exactly this contradiction within Google's own systems.
+**The Core Issue:** A vulnerability cannot simultaneously be classified as both "Intended Behavior" (dismissed) and "P1 Verified" (highest priority confirmed bug). Yet the evidence shows exactly this contradiction in Google's internal systems.
 
 ---
 
